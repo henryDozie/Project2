@@ -5,6 +5,7 @@ The main target group for this application will be virtually everyone interested
 # API
 
 ![wireframe0](https://imgur.com/Um3EdIe.jpg)
+
 The API employed in the project is acquired from:
 `RAWG Video Games Database API`
 RAWG is the largest video game database and game discovery service. And they are gladly sharing our 350,000+ games, search, and machine learning recommendations with the world.
@@ -18,7 +19,14 @@ This application will have a richly styled outlook in CSS which will help ensure
 - What are the most popular games in 2019?
 - What is the highest rated game by Electronic Arts?
 
-The main section will contain about 6 div elements that function display units. this display will be in a square box making it better responsive on varying screen dimensions. 
+The main section will contain about 6 div elements that function display units. this display will be in a square box making it better responsive on varying screen dimensions. These will be function/class based components including;
+
+- Header
+- Footer
+- Categories
+- Forms `For collecting serch query`
+- Users `A locally stored list of users`
+- Comments `(Users can leave comments on there favourite/worst games)`
 
 ## API Call
 This API has been tested and returned data is the following format;
