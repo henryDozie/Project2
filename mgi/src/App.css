@@ -1,28 +1,72 @@
+body{
+  background-color: black;
+}
 .gamesDiv{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 1vh;
   column-gap: 1vw;
-  margin: 0 5vw;
+  margin: 0 5vw 0 15vw;
 }
 
 .gameCatDiv{
   height: 20vh;
-  display: inline-grid;
-  
+  display: inline-table;
+  text-align: center;
+  object-fit: cover;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 1cm;
+  box-shadow: 2px 4px 7px 1px grey;
+  background-color: rgb(31, 29, 29);
 }
 img{
   height: 20vh;
   width: 100%;
   z-index: 0;
   opacity: 0.6;
+  position: relative;
+  border: 1px solid grey;
+  border-radius: 1cm;
+  /* display: fixed; */
 }
 
 img:hover{
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .gameCatDiv>h2{
-  z-index: 1;
-  color: black;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: rgb(31, 29, 29);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+a{
+  text-decoration: none;
+  color: white;
+  padding-left: 8px;
+}
+
+ 
+nav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+nav a:hover:not(.active) {
+  background-color: rgb(81, 212, 86);
+  color: white;
 }
