@@ -1,9 +1,12 @@
 import React from 'react'
 import axios from 'axios'
 
-export async function LoadApi() {
-  const result = await axios('https://api.rawg.io/api/games')
+export async function getCat() {
+  const response = await axios('https://api.rawg.io/api/genres')
+  console.log(response.data.results);
+  return response
+}
 
-  console.log(result);
-  return result
+export async function loadGames() {
+
 }
