@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { LoadApi } from './loadAPI';
+import Header from './components/header'
+import { Route } from 'react-router-dom';
+import Categories from './components/categories'
+import Video from './components/mainBody';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      result: "",
+      apiDataLoaded: false
+    }
+  }
+
+  componentDidMount = async () => {
+    let response = await LoadApi()
+    response = response.data.results
+
+    this.setState({
+      result: response,
+      apiDataLoaded: true
+    })
+  }
+
+  render() {
+    console.log(this.state.result);
+    return (
+      <div className="App">
+        <Header />
+        <Route path="/categories" render={() => <Categories/>}/>
+        <Route path='/video' render={() => <Video video={this.state.result}/>} />
+      </div>
+    );
+  }
 }
 
 export default App;
