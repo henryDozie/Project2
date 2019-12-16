@@ -14,36 +14,19 @@ class App extends React.Component {
     this.state = {
       result: "",
       apiDataLoaded: false,
-      gameCategories: []
+      gameCategoriesInfo: []
     }
   }
 
-  componentDidMount = async () => {
-    let response = await LoadApi()
-    response = response.data.results
-
-    this.setState({
-      result: response,
-      apiDataLoaded: true
-    })
-  }
-
-  onClick = async(event) => {
-    event.preventDefault();
-    let cat = []
-    let result = await getCat()
-  }
-
-
   render() {
-    // console.log(this.state.result);
     return (
       <div className="App">
         <Header />
+        {/* <nav className="sideNav"></nav> */}
         <Route path="/categories" render={() => <Categories/>}/>
-        <Route path='/mainBody' render={() => <MainBody onSubmit={this.state.onSubmit} />} />
+          {/* <Route path='/mainBody' render={() => <MainBody onSubmit={this.state.onSubmit} />} />
         <MainBody
-          onSubmit={this.state.onSubmit}
+          onSubmit={this.state.onSubmit} */}
         />
       </div>
     );
