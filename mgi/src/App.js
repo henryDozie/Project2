@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css'
-import { LoadApi } from './loadAPI';
+import { getCat } from './components/loadAPI';
 import Header from './components/header'
 import { Route } from 'react-router-dom';
 import Categories from './components/categories'
 import Video from './components/mainBody';
+import MainBody from './components/mainBody';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class App extends React.Component {
 
     this.state = {
       result: "",
-      apiDataLoaded: false
+      apiDataLoaded: false,
+      gameCategories: []
     }
   }
 
@@ -26,13 +28,23 @@ class App extends React.Component {
     })
   }
 
+  onClick = async(event) => {
+    event.preventDefault();
+    let cat = []
+    let result = await getCat()
+  }
+
+
   render() {
-    console.log(this.state.result);
+    // console.log(this.state.result);
     return (
       <div className="App">
         <Header />
         <Route path="/categories" render={() => <Categories/>}/>
-        <Route path='/video' render={() => <Video video={this.state.result}/>} />
+        <Route path='/mainBody' render={() => <MainBody onSubmit={this.state.onSubmit} />} />
+        <MainBody
+          onSubmit={this.state.onSubmit}
+        />
       </div>
     );
   }
