@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { getCat, getPopularIn2019 } from './loadAPI';
 
 class PopularIn2019 extends React.Component {
