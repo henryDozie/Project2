@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import { getCat, getPopularIn2019, getHighestRating } from './loadAPI';
+import React from 'react'
+import { getHighestRating } from './loadAPI';
 
 class HighestRating extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      highRatings: [],
       results: '',
       apiDataLoaded: false
     }
@@ -34,7 +33,7 @@ class HighestRating extends React.Component {
           this.state.result.map((game, index) =>
             <div key={index} className="gameCatDiv">
               <h3>{game.name}</h3>
-              <img src={game.background_image} />
+              <img src={game.background_image} alt="" />
               <div>
                 <ul>
                   <li><h4>Rating: {game.rating}</h4></li>
