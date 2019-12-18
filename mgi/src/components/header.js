@@ -14,7 +14,7 @@ function Header(props) {
         <h1>Releases</h1>
         <Link to='./last30Days'><h3>Last 30 Days</h3></Link>
         <Link to='./thisWeek'><h3>This Week</h3></Link>
-        <Link to='./nextWeek'><h3>Next Week</h3></Link>
+        <Link to='./platforms'><h3>Platforms</h3></Link>
         <h1>Game Chart</h1>
         <Link to='./highestRating'><h3>Highest Ratings</h3></Link>
         <Link to='./popularIn2019'><h3>Porpular in 2019</h3></Link>
