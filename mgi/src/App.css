@@ -1,5 +1,6 @@
 body{
   background-color: black;
+  margin-left: -3.5%;
 }
 .gamesDiv{
   display: grid;
@@ -7,27 +8,33 @@ body{
   row-gap: 1vh;
   column-gap: 1vw;
   margin: 0 5vw 0 15vw;
+ 
 }
 
 .gameCatDiv{
-  height: 20vh;
+  height: 55vh;
+  width: 21vw;
   display: inline-table;
   text-align: center;
   object-fit: cover;
   align-items: center;
   border: 1px solid grey;
   border-radius: 1cm;
-  box-shadow: 2px 4px 7px 1px grey;
+  box-shadow: 2px 4px 7px 1px rgb(81, 212, 86);
   background-color: rgb(31, 29, 29);
+  transition: transform 2s;
+  margin-bottom: 10px;
 }
 img{
-  height: 20vh;
+  height: 30vh;
   width: 100%;
   z-index: 0;
-  opacity: 0.6;
+  opacity: 0.2;
   position: relative;
   border: 1px solid grey;
-  border-radius: 1cm;
+  border-top-left-radius: 0.5cm;
+  border-top-right-radius: 0.5cm;
+  transition: 1s;
   /* display: fixed; */
 }
 
@@ -46,9 +53,12 @@ img:hover{
 nav {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 11vw;
   background-color: rgb(31, 29, 29);
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
   height: 100%;
   overflow: auto;
   display: flex;
@@ -69,4 +79,96 @@ nav a.active {
 nav a:hover:not(.active) {
   background-color: rgb(81, 212, 86);
   color: white;
+}
+
+nav>h1, h2, h3{
+  color: white;
+  padding-left: 8px;
+}
+
+nav>h1{
+  color: darkred;
+  padding-left: 8px;
+  font-size: 30px;
+}
+
+
+h4{
+  color: white;
+}
+
+video{
+  height: 30vh;
+  width: 20vw;
+  z-index: 0;
+  opacity: 0.2;
+  position: relative;
+  border: 1px solid grey;
+  border-radius: 1cm;
+  transition: 1s;
+  overflow: hidden;
+}
+
+video:hover{
+  opacity: 1; 
+}
+li{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 12px;
+}
+li>h4{
+  margin-top: 1px;
+  color: rgb(81, 212, 86);
+  font-family: 'Baskervville', serif;
+  font-size: 15px;
+}
+header{
+  color: white;
+  display: flex;
+  justify-content: center;  
+}
+
+.info {
+  display: none;
+  z-index: 5;
+  color: aliceblue;
+  position: absolute;
+  transition: 2s;
+  
+}
+  
+img:hover + .info {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: purple;
+  transition-duration: 2s;
+  margin-left: 2px;
+}
+
+ul{
+  position: absolute;
+  background-color: rgb(31, 29, 29);
+  color: white;
+  width: 18.7vw;
+  /* margin-left: 6px; */
+  border-bottom-left-radius: 1cm;
+  border-bottom-right-radius: 1cm;
+  box-shadow: 2px 4px 7px 1px rgb(81, 212, 86);
+  background-color: rgb(31, 29, 29);
+  margin-top: -5px;
+  margin-left: -0.5%;
+  z-index: 1;
+}
+
+.platforms{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.fab{
+  display: flex;
+  margin-left: 20px;
 }
