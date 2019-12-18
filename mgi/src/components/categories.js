@@ -1,5 +1,4 @@
-import Router from 'react-router-dom'
-import React, { Component } from 'react'
+import React from 'react'
 import { getCat } from './loadAPI';
 
 class Categories extends React.Component {
@@ -16,7 +15,6 @@ class Categories extends React.Component {
       result: response,
       apiDataLoaded: true
     })
-    console.log(response);
     
   }
 
@@ -28,7 +26,7 @@ class Categories extends React.Component {
           (
             <div key={index} className="gameCatDiv">
               <h2>{game.name}</h2>
-              <img src={game.image_background} alt="No Image"/>
+              <img src={game.image_background} alt=""/>
             </div>
           ))}
       </div>
