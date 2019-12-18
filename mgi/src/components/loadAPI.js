@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export async function getCat() {
   const response = await axios('https://api.rawg.io/api/genres')
-  // console.log(response.data.results);
+  console.log(response.data.results);
   return response.data.results
 }
 
@@ -44,4 +44,10 @@ export async function getAllTimeGreats() {
   console.log(response.data.results);
   
   return response.data.results
+}
+
+export async function getPlatforms() {
+  const response = await axios("https://api.rawg.io/api/platforms")
+  console.log(response.data.results);
+  return response.data.results 
 }
