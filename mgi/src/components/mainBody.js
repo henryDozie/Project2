@@ -59,7 +59,7 @@ class MainBody extends React.Component {
           (
             <div key={index} className="gameCatDiv">
               <h2>{game.name}</h2>
-              <img src={game.background_image} alt="No Image"/>
+              <img src={game.background_image} alt=""/>
             </div>
           ))}
 
