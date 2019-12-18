@@ -8,8 +8,8 @@ import MainBody from './components/mainBody';
 import PopularIn2019 from './components/popularIn2019'
 import Last30Days from './components/last30Days'
 import AllTimeGreats from './components/allTimeGreats';
-import NextWeek from './components/thisWeek';
-import ThisWeek from './components/nextWeek';
+import ThisWeek from './components/thisWeek';
+import Platforms from './components/platforms';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class App extends React.Component {
         <Route path="/mainBody" render={() => <MainBody/>}/>
         <Route path="/allTimeGreats" render={() => <AllTimeGreats />} />
         <Route path="/thisWeek" render={() => <ThisWeek />} />
-        <Route path="/nextWeek" render={() => <NextWeek />} />
+        <Route path="/platforms" render={() => <Platforms />} />
         <Route path="/highestRating" render={() => <HighestRating />} />
        />
       </div>
