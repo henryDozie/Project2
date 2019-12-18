@@ -1,5 +1,5 @@
 import React from 'react'
-import { getCat, getPopularIn2019 } from './loadAPI';
+import { getPopularIn2019 } from './loadAPI';
 
 class PopularIn2019 extends React.Component {
   constructor(props) {
