@@ -1,7 +1,4 @@
-import React from 'react'
-
-
-
+import React from "react";
 
 export default class Gamecard extends React.Component {
   constructor(props) {
@@ -9,48 +6,68 @@ export default class Gamecard extends React.Component {
 
     this.state = {
       hovered: false
-    }
-
+    };
   }
-
 
   showDropdown = () => {
-    console.log("hovered")
+    console.log("hovered");
     this.setState({
       hovered: true
-    })
-  }
+    });
+  };
   hideDropDown = () => {
     this.setState({
       hovered: false
-    })
-  }
-
+    });
+  };
 
   render() {
     return (
       <div>
-        <div key={this.props.index} className="gameCatDiv" onMouseEnter={this.showDropdown} onMouseLeave={this.hideDropDown}>
-          <i className="fas fa-plus-circle fa-3x"></i>
-          <div className="catHead">
-            <h4 className="gameName">{this.props.name}</h4>
+        <div
+          key={this.props.index}
+          className="gameCatDiv"
+          onMouseEnter={this.showDropdown}
+          onMouseLeave={this.hideDropDown}
+        >
+          <div id="title">
+            <i
+              className="fas fa-plus-circle fa-4x"
+              onClick={e => this.props.handleClick(e, this.props.game)}
+            ></i>
+            <h4 className="gameName" id="titleName">
+              {this.props.name}
+            </h4>
           </div>
           <img src={this.props.background_image} alt="gameInfoImage"></img>
-          {this.state.hovered &&
+          {this.state.hovered && (
             <div className="info">
               <ul>
-                <li><h2>Release date:</h2></li>
-                <li><h2>Genre</h2></li>
-                <li><h2>Rating</h2></li>
-                <li><div className="platforms"><h2>Platform:</h2>   <i className="fab fa-xbox"></i><i class="fab fa-playstation"></i><i class="fab fa-steam"></i><i class="fas fa-laptop"></i></div></li>
-
+                <li>
+                  <h4>Release date: {this.props.released}</h4>
+                </li>
+                <li>
+                  <h4>Rating: {this.props.rating}</h4>
+                </li>
+                <li>
+                  <h4>Review Count: {this.props.ratings_count}</h4>
+                </li>
+                <li>
+                  <h4>Suggestion Index: {this.props.suggestions_count}</h4>
+                </li>
+                <li>
+                  <div className="platforms">
+                    <h4>platforms:</h4> <i className="fab fa-xbox"></i>
+                    <i className="fab fa-playstation"></i>
+                    <i className="fab fa-steam"></i>
+                    <i className="fas fa-laptop"></i>
+                  </div>
+                </li>
               </ul>
-
             </div>
-          }
-
+          )}
         </div>
       </div>
-    )
+    );
   }
 }
