@@ -12,6 +12,8 @@ import ThisWeek from "./components/thisWeek";
 import Platforms from "./components/platforms";
 import HomeBody from "./components/homeBody";
 import MyLibrary from "./components/myLibrary";
+import Footer from "./components/footer";
+import Head from "./components/head";
 
 class App extends React.Component {
   constructor(props) {
@@ -43,24 +45,38 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Head />
         <Header />
         <Route path="/categories" render={() => <Categories />} />
-        <Route path="/popularIn2019" render={() => <PopularIn2019 handleClick={this.handleClick}/>} />
-        <Route path="/last30Days" render={() => <Last30Days handleClick={this.handleClick}/>} />
-        <Route path="/search" render={() => <Search handleClick={this.handleClick}/>} />
+        <Route
+          path="/popularIn2019"
+          render={() => <PopularIn2019 handleClick={this.handleClick} />}
+        />
+        <Route
+          path="/last30Days"
+          render={() => <Last30Days handleClick={this.handleClick} />}
+        />
+        <Route
+          path="/search"
+          render={() => <Search handleClick={this.handleClick} />}
+        />
         <Route
           path="/allTimeGreats"
           render={() => <AllTimeGreats handleClick={this.handleClick} />}
         />
         <Route path="/thisWeek" render={() => <ThisWeek />} />
         <Route path="/platforms" render={() => <Platforms />} />
-        <Route path="/highestRating" render={() => <HighestRating handleClick={this.handleClick}/>} />
+        <Route
+          path="/highestRating"
+          render={() => <HighestRating handleClick={this.handleClick} />}
+        />
         <Route
           path="/myLibrary"
           render={() => <MyLibrary favorites={this.state.favorites} />}
         />
         />
         <HomeBody />
+        <Footer />
       </div>
     );
   }
