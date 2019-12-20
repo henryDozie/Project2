@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/header";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Categories from "./components/categories";
 import HighestRating from "./components/highestRating";
 import Search from "./components/search";
@@ -45,8 +45,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Head />
         <Header />
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+        <Route path="/home" render={() => <Head />}></Route>
         <Route path="/categories" render={() => <Categories />} />
         <Route
           path="/popularIn2019"
@@ -75,7 +78,7 @@ class App extends React.Component {
           render={() => <MyLibrary favorites={this.state.favorites} />}
         />
         />
-        <HomeBody />
+        {/* <HomeBody /> */}
         <Footer />
       </div>
     );
