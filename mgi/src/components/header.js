@@ -6,7 +6,7 @@ function Header(props) {
     <div>
 
       <nav>
-        <Link to='./mainBody'><h1>Search</h1></Link>
+        <Link to='./search'><h1>Search</h1></Link>
         <Link to='./home'><h1>Home</h1></Link>
         <Link to='./categories'><h3>Categories</h3></Link>
         <Link to='./myLibrary'><h3>My Library</h3></Link>
