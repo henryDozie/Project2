@@ -1,51 +1,44 @@
-import React from 'react'
-import { getHighestRating } from './loadAPI';
+import React from "react";
+import { getHighestRating } from "./loadAPI";
+import GameCard from "./gameCard";
 
 class HighestRating extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: '',
+      results: "",
       apiDataLoaded: false
-    }
+    };
   }
 
   componentDidMount = async () => {
-    let response = await getHighestRating()
+    let response = await getHighestRating();
     console.log(response);
     this.setState({
       result: response,
       apiDataLoaded: true
-    })
-  }
-
-  hover = () => {
-    // console.log('here');
-
-  }
+    });
+  };
 
   render() {
-
     return (
-
       <div className="gamesDiv">
         {this.state.apiDataLoaded &&
-          this.state.result.map((game, index) =>
-            <div key={index} className="gameCatDiv">
-              <h3>{game.name}</h3>
-              <img src={game.background_image} alt="" />
-              <div>
-                <ul>
-                  <li><h4>Rating: {game.rating}</h4></li>
-                   <li><h4>Released: {game.released}</h4></li>
-                  <li><h4>Rating: {game.platforms[0].name}</h4></li>
-                </ul>
-              </div>
-            </div>
-
-          )}
+          this.state.result.map((game, index) => (
+            <GameCard
+              name={game.name}
+              background_image={game.background_image}
+              released={game.released}
+              rating={game.rating}
+              ratings_count={game.ratings_count}
+              suggestions_count={game.suggestions_count}
+              index={index}
+              handleClick={this.props.handleClick}
+              game={game}
+            />
+          ))}
       </div>
-    )
+    );
   }
 }
 
