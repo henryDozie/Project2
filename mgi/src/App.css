@@ -1,13 +1,15 @@
 body {
   margin-left: -3.5%;
-  background: url("./images/bg3.jpg");
-  background-size: auto;
+  background: black;
+  background-image: url("./images/bg3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .gamesDiv {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* row-gap: 1vh; */
   column-gap: 1vw;
   margin: 0 5vw 0 15vw;
 }
@@ -253,7 +255,7 @@ footer {
   background-color: rgb(31, 29, 29);
   color: white;
   text-align: center;
-  z-index: 20;
+  z-index: 90;
   height: 10vh;
   display: flex;
   flex-direction: column;
@@ -275,8 +277,85 @@ footer {
   color: #4caf50;
   cursor: pointer;
 }
+.Headpic{
+  display: flex;
+  height: 75vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center; 
+}
+
+.Headpic > img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  opacity: 0.8;
+  z-index: 1;
+  height: 35vh;
+  min-width: 30vw;
+  flex-wrap: nowrap;
+  margin: 2vh 1vw;
+  font-size: .4em;
+  color: white;
+  transform: translateX(100%);
+  animation: bannerResults 20s linear infinite;
+  box-shadow: 5px 5px 10px 5px black;
+}
+
+.Headpic > img:hover{
+  height: 45vh;
+  min-width: 40vw;
+  opacity: 1;
+}
+
+@keyframes bannerResults {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 @media only screen and (max-width: 1024px) {
+  .App{
+    overflow: hidden;
+    height: 100vh;
+    background-size: cover;
+  }
+  .Headpic{
+    display: flex;
+    height: 70vh;
+    width: 60vw;
+    justify-content: center;
+    align-items: center; 
+  }
+  .Headpic > img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    opacity: 0.8;
+    z-index: 1;
+    height: 35vh;
+    min-width: 45vw;
+    flex-wrap: nowrap;
+    margin: 2vh 1vw;
+    font-size: .4em;
+    color: white;
+    transform: translateX(100%);
+    animation: bannerResults 20s linear infinite;
+    box-shadow: 5px 5px 10px 5px black;
+  }
+
+  .Headpic > img:hover{
+    height: 38vh;
+    min-width: 50vw;
+    opacity: 1;
+  }
   .gamesDiv {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -379,9 +458,25 @@ footer {
     align-content: center;
     margin-top: 30vh;
   }
+  .Headpic{
+    display: flex;
+    height: 75vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center; 
+  }
+  footer{
+    min-width: 100vw;
+  }
 }
 
 @media only screen and (max-width: 500px) {
+  .App{
+    overflow: hidden;
+    background-image: url("https://imgur.com/z1uldWb.jpg");
+    height: 100vh;
+    background-size: cover;
+  }
   .gamesDiv {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -494,5 +589,14 @@ footer {
     justify-content: center;
     align-content: center;
     margin-top: 40vh;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  nav {
+    margin: 0;
+    padding: 0;
+    width: 23vw;
+   
   }
 }
