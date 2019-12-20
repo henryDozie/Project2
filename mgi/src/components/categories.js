@@ -26,7 +26,7 @@ class Categories extends React.Component {
               <h2>{game.name}</h2>
               <img className="catImages" src={game.image_background} alt="" />
               <div className="gameCatDesc">
-                Games Count: {game.games_count.toLocaleString()}
+                <h4>Games Count: {game.games_count.toLocaleString()}</h4>
               </div>
             </div>
           ))}
