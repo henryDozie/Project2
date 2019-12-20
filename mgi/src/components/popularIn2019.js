@@ -1,47 +1,47 @@
-import React from 'react'
-import { getPopularIn2019 } from './loadAPI';
+import React from "react";
+import { getPopularIn2019 } from "./loadAPI";
+import VideoCard from "./videoCard";
 
 class PopularIn2019 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       porularGames: [],
-      results: '',
+      results: "",
       apiDataLoaded: false
-    }
+    };
   }
 
   componentDidMount = async () => {
-    let response = await getPopularIn2019()
+    let response = await getPopularIn2019();
     console.log(response);
     this.setState({
       result: response,
       apiDataLoaded: true
-    })
-  }
-
-  hover = () => {
-    // console.log('here');
-
-  }
+    });
+  };
 
   render() {
-
     return (
-
       <div className="gamesDiv">
         {this.state.apiDataLoaded &&
-          this.state.result.map((game, index) =>
+          this.state.result.map((game, index) => (
             <div key={index} className="gameCatDiv">
-              <h3>{game.name}</h3>
-              <video width="320" height="240" controls className="video" onMouseOver={this.hover}>
-                <source src={game.clip.clips[320]} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <VideoCard
+                name={game.name}
+                clip={game.clip.clip}
+                index={index}
+                handleClick={this.props.handleClick}
+                game={game}
+                released={game.released}
+                rating={game.rating}
+                ratings_count={game.ratings_count}
+                suggestions_count={game.suggestions_count}
+              />
             </div>
-          )}
+          ))}
       </div>
-    )
+    );
   }
 }
 
